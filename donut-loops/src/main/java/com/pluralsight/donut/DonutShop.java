@@ -1,24 +1,29 @@
-package com.pluralsight.donut;
+package com.pluralsight.donuts;
 
 public class DonutShop {
     public static void main(String[] args) {
 
-        Donut a = new Donut();
-        a.description = "spongebob donut";
-        a.calories= 600;
-        a.price = 4.99;
+        Donut d = new Donut("Big Fluffy Donut with a cherry on top", 499, 3.99);
+        Donut d2 = new Donut("Chocolate cake donut", 399, 1.99);
 
-        System.out.print(a.description);
-        System.out.println(a.calories);
+        System.out.println(d);
+        printDonut(d);
+        printDonutAsCSV(d);
 
-        Donut b = new Donut();
-        b. description = "cosmos donut";
-        b. calories = 450;
-        b. price = 3.25;
+        //printDonut(d2);
 
-        System.out.print(b.description);
-        System.out.println(b.price);
+    }
 
+    public static void printDonut(Donut d){
+        System.out.println(d.getDescription());
+        System.out.printf("  which costs $%.2f\n", d.getPrice());
+    }
 
+    public static void printDonutAsCSV(Donut d){
+        System.out.print(d.getDescription());
+        System.out.print(",");
+        System.out.print(d.getCalories());
+        System.out.print(",");
+        System.out.println(d.getPrice());
     }
 }
