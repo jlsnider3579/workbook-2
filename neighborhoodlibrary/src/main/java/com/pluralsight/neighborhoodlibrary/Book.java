@@ -1,12 +1,14 @@
+package com.pluralsight.neighborhoodlibrary;
+
 public class Book {
-    // Properties
+    // add the Properties
     private int id;
     private String isbn;
     private String title;
     private boolean isCheckedOut;
     private String checkedOutTo;
 
-    // Constructor
+    // form a Constructor
     public Book(int id, String isbn, String title) {
         this.id = id;
         this.isbn = isbn;
@@ -56,6 +58,11 @@ public class Book {
         } else {
             System.out.println(title + " is not checked out.");
         }
+    }
+
+    public String toString() {
+        return "ID: " + id + ", ISBN: " + isbn + ", Title: " + title +
+                ", Checked out: " + (isCheckedOut ? "Yes, to " + checkedOutTo : "No");
     }
 }
 
